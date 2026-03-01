@@ -1,5 +1,5 @@
 #include <unistd.h>
 
 int main(void) { 
-  write(1, "HACK\n", 5); 
+    write(1, "HACK\n", 5); 
 }
