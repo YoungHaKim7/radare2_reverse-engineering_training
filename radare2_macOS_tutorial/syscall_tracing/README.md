@@ -159,3 +159,40 @@ syscall:::entry
 ```bash
 sudo dtruss ./target/a01_write_strace_radare2
 ```
+
+Your program only makes one `write()` syscall then exits, so `dtruss` output is minimal. The program is too simple to see interesting tracing.
+
+## Better ways to trace on macOS:
+
+**1. Add delay to see output:**
+```bash
+# Add sleep after write to see the trace clearly
+```
+
+**2. Use `dtruss` with more verbose output:**
+```bash
+sudo dtruss -t write ./target/a01_write_strace_radare2
+```
+
+**3. Alternative: `strace` equivalent on macOS**
+
+Since you're doing reverse engineering training, you might want:
+
+```bash
+# Use dtrace directly for more control
+sudo dtrace -n 'syscall:::entry /execname == "a01_write_strace_radare2"/ { printf("%s", probefunc); }'
+```
+
+**4. For this simple case, just trace the write syscall:**
+```bash
+sudo dtruss -f ./target/a01_write_strace_radare2 2>&1
+```
+
+The `-f` flag follows child processes if any.
+
+The "HACK" you see is actually your program's stdout output, not from dtruss. To see cleaner syscall output:
+```bash
+sudo dtruss ./target/a01_write_strace_radare2 2>&1 | grep -v "^HACK"
+```
+
+Would you like me to create a more interesting binary with multiple syscalls for better tracing practice?
