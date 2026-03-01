@@ -12,6 +12,17 @@ Then:
 2. Choose your target process
 3. Click record
 
+# macOS
+- On macOS, dtruss is limited by System Integrity Protection (SIP). To use it effectively, you have a few options:
+
+- Option 1: Disable SIP (Not Recommended)
+- Disabling SIP reduces system security. If you proceed:
+
+```bash
+  # 1. Boot into Recovery Mode (restart + hold Command+R)
+  # 2. Open Terminal and run: csrutil disable
+  # 3. Reboot
+```
 ## Quicker Command-Line Options
 
 For syscall tracing specifically, `dtruss` is often more convenient:
