@@ -127,3 +127,35 @@ dtrace -n 'profile:::profile-997 /pid == $target/ { @[ustack()] = count(); }' -p
 ```
 
 Would you like me to help with a specific tracing scenario for your radare2 reverse engineering work?
+
+The dtrace syntax you're using is incorrect. On macOS, dtrace works differently than Linux's strace. Here are the correct approaches:
+
+**Option 1: Run the program under dtrace**
+```bash
+sudo dtrace -c './target/a01_write_strace_radare2' -n 'syscall:::entry { printf("%s(%s)", probefunc, copyinstr(arg0)); }'
+```
+
+**Option 2: Trace by process name (run in another terminal)**
+```bash
+# Terminal 1: Run your binary normally
+./target/a01_write_strace_radare2
+
+# Terminal 2: Trace it
+sudo dtrace -n 'syscall:::entry /execname == "a01_write_strace_radare2"/ { printf("%s", probefunc); }'
+```
+
+**Option 3: More detailed tracing**
+```bash
+sudo dtrace -c './target/a01_write_strace_radare2' -n '
+syscall:::entry
+{
+    printf("%-6s %-16s %s", pid, execname, probefunc);
+}'
+```
+
+**Note:** Due to System Integrity Protection (SIP), some dtrace features are limited on macOS. You may need to disable SIP to get full tracing capabilities, but this is generally not recommended for daily use.
+
+**Alternative on macOS:** Consider using `dtruss` which is a dtrace-based script:
+```bash
+sudo dtruss ./target/a01_write_strace_radare2
+```
