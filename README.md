@@ -12,6 +12,10 @@ cd sys
 - macOS Install
   - https://github.com/radareorg/radare2/blob/master/doc/macos.md
 
+```bash
+brew install radare2
+```
+
 # (160116)Syscalls, Kernel vs. User Mode and Linux Kernel Source Code - bin 0x09
 LiveOverflo
 - https://youtu.be/fLS99zJDHOc?si=Sc3b3GhXZkePLx9Y
