@@ -1,3 +1,6 @@
+# `dtrace`쓰려면 `csrutil`을 막아야함 자체 시스템 보호 프로그램 풀어야함.
+- https://apple.stackexchange.com/questions/208762/now-that-el-capitan-is-rootless-is-there-any-way-to-get-dtrace-working
+
 On macOS, to trace syscalls with **Instruments**:
 
 ## Using Xcode Instruments
