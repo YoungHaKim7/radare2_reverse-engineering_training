@@ -1,3 +1,12 @@
+# HOW TO TURN ON / OFF SYSTEM INTEGRITY PROTECTION for MacOS | DIY GEEK
+- https://youtu.be/a51UrFcwtqc?si=pZaVFnVf_JVWd6u2
+
+- 복구 모드 들어가서 실행 해야한다. 빡쎄다.
+
+```bash
+csrutil disable
+```
+
 **Static analysis works!** You can see the disassembly of your binary showing the `write(1, "HACK\n", 5)` call.
 
 ## Summary - For actual debugging (`r2 -d`), you need to:
