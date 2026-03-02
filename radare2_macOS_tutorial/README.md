@@ -7,6 +7,10 @@
 csrutil disable
 ```
 
+# macOS는 "Instrumets"이 앱을 적극적으로 활용해야함.
+- [(200203) Apple Debugging L9 - Instruments Time Profiler | AppleProgramming](https://youtu.be/gbpCPphf4xw?si=jQ2xlxQ8FEd_5sx9)
+
+
 **Static analysis works!** You can see the disassembly of your binary showing the `write(1, "HACK\n", 5)` call.
 
 ## Summary - For actual debugging (`r2 -d`), you need to:
