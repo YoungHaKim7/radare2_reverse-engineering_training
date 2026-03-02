@@ -7,7 +7,7 @@
 csrutil disable
 ```
 
-# macOS는 "Instrumets"이 앱을 적극적으로 활용해야함.
+# macOS는 "Instruments.app"이 앱을 적극적으로 활용해야함.
 - [(200203) Apple Debugging L9 - Instruments Time Profiler | AppleProgramming](https://youtu.be/gbpCPphf4xw?si=jQ2xlxQ8FEd_5sx9)
 
 
