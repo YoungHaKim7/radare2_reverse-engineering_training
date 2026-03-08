@@ -16,6 +16,8 @@ cd sys
 brew install radare2
 ```
 
-# (160116)Syscalls, Kernel vs. User Mode and Linux Kernel Source Code - bin 0x09
-LiveOverflo
-- https://youtu.be/fLS99zJDHOc?si=Sc3b3GhXZkePLx9Y
+# 유튜브 영상 모음
+
+- [(160116)Syscalls, Kernel vs. User Mode and Linux Kernel Source Code - bin 0x09 | LiveOverflo](https://youtu.be/fLS99zJDHOc?si=Sc3b3GhXZkePLx9Y)
+
+- [(170405) Linux의 메모리 관리 소개 | The Linux Foundation](https://youtu.be/7aONIVSXiJ8?si=jFgH_D7uWyVoIa8n)
